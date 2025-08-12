@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.primefaces</groupId>
+        <groupId>com.liferay.faces</groupId>
         <artifactId>primefaces-parent</artifactId>
-        <version>13.0.10</version>
+        <version>13.0.10.LIFERAY-PATCHED-1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -40,6 +40,7 @@
         <dependency>
             <groupId>org.apache.tomee</groupId>
             <artifactId>javaee-api</artifactId>
+			<version>8.0-6</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -49,7 +50,7 @@
         </dependency>
 
         <dependency>
-            <groupId>org.primefaces</groupId>
+			<groupId>${project.groupId}</groupId>
             <artifactId>primefaces</artifactId>
             <version>${project.version}</version>
         </dependency>
