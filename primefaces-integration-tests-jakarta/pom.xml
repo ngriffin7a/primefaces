@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.primefaces</groupId>
+        <groupId>com.liferay.faces</groupId>
         <artifactId>primefaces-parent</artifactId>
-        <version>15.0.6</version>
+        <version>15.0.6.LIFERAY-PATCHED-1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -39,7 +39,7 @@
     <dependencies>
         <!-- COMPILE -->
         <dependency>
-            <groupId>org.primefaces</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>primefaces</artifactId>
             <version>${project.version}</version>
             <classifier>jakarta</classifier>
@@ -131,13 +131,13 @@
         </dependency>
 
         <dependency>
-            <groupId>org.primefaces</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>primefaces-selenium-core</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.primefaces</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>primefaces-selenium-components</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>

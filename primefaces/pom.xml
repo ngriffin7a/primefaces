@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.primefaces</groupId>
+        <groupId>com.liferay.faces</groupId>
         <artifactId>primefaces-parent</artifactId>
-        <version>15.0.6</version>
+        <version>15.0.6.LIFERAY-PATCHED-1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -28,14 +28,39 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.tomee</groupId>
-            <artifactId>javaee-api</artifactId>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>jakarta.faces</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <!-- shaded dependencies, dont put it into dependencyManagement, it will overwrite e.g. commons-io version from POI -->
@@ -466,7 +491,6 @@
                         </Import-Package>
                         <Require-Capability>
                             osgi.serviceloader;filter:="(osgi.serviceloader=org.primefaces.virusscan.VirusScanner)";cardinality:=multiple,
-                            osgi.extender;filter:="(osgi.extender=osgi.serviceloader.processor)";resolution:=optional,
                             osgi.extender;filter:="(osgi.extender=osgi.serviceloader.registrar)"
                         </Require-Capability>
                         <Provide-Capability>
